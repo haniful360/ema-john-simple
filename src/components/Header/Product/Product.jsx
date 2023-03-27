@@ -1,10 +1,10 @@
 import React from 'react';
 import './Product.css'
-import { AiFillStar } from 'react-icons/ai';
+import { FaShoppingCart} from 'react-icons/fa';
 
 const Product = (props) => {
-    console.log(props);
     const { name, price, ratings, seller, img } = props.product;
+    const handleAddToCart = props.handleAddToCart;
     return (
         <div className='product'>
             <img src={img} alt="" />
@@ -12,9 +12,11 @@ const Product = (props) => {
             <p className='product-price'>Price: ${price}</p>
             <div className='product-info'>
                 <p>Manufacturer:  {seller}</p>
-                <p>Rating: {ratings} star <AiFillStar></AiFillStar></p>
+                <p>Rating: {ratings} star </p>
             </div>
-
+        <button onClick={() =>handleAddToCart(props.product)} className='btn-cart'><span className='cart-icon'>
+        Add To Cart <FaShoppingCart ></FaShoppingCart>
+            </span></button>
         </div>
     );
 };
