@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cart.css'
 const Cart = (props) => {
-    console.log(props);
+   const {cart} = props
     return (
         <div>
             <h5 className='order-summery'>Order Summery</h5>
